@@ -1,0 +1,21 @@
+/* Solution for this problem on leetcode: https://leetcode.com/problems/palindrome-number/
+ * Author: Prerna Devulapalli
+*/
+public class palindrome_number {
+    public boolean isPalindrome(int x) {
+        int num = x;
+        int lastno,palinno = 0;
+        String checknegative = Integer.toString(x);
+        if(checknegative.charAt(0)!= '-'){
+            while (num !=0){
+                lastno = num%10;
+                palinno = palinno*10 + lastno;
+                num = num/10;
+            }
+            if(palinno == x){
+                return true;
+            }
+        }
+        return false;
+    }
+}
